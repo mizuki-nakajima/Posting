@@ -8,15 +8,23 @@
 
 import UIKit
 
+
 class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("ログインしました")
-        // Do any additional setup after loading the view.
+        print("PURINT_DEBUG : ログインしました")
+
     }
     
 
+    @IBAction func handlePostingStartButton(_ sender: Any) {
+        let mapViewController = self.storyboard?.instantiateViewController(withIdentifier: "Map")
+        self.present(mapViewController!, animated: true, completion: nil)
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 

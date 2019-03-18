@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class InformationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }

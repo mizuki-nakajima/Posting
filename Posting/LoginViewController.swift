@@ -29,7 +29,8 @@ class LoginViewController: UIViewController {
             }
             
             // HUDで処理中を表示
-            SVProgressHUD.show()
+            //SVProgressHUD.show()
+            SVProgressHUD.showSuccess(withStatus: "ログイン")
             
             Auth.auth().signIn(withEmail: address, password: password) { user, error in
                 if let error = error {

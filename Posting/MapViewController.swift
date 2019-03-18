@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController,CLLocationManagerDelegate{
 
+    @IBOutlet weak var mapView: MKMapView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +22,14 @@ class MapViewController: UIViewController {
     }
     
 
+    
+    //キャンセルボタンが押されたときのメソッド
+    @IBAction func handleCanceiButton(_ sender: Any) {
+        print("DEBUG_PRINT : キャンセルが押されました")
+        let tabBarViewController = self.storyboard?.instantiateViewController(withIdentifier: "TabBar")
+        self.present(tabBarViewController!, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

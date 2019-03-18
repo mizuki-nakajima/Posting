@@ -10,13 +10,24 @@ import Firebase
 import FirebaseAuth
 import UIKit
 import RAMAnimatedTabBarController
+import MapKit
+import CoreLocation
+import SVProgressHUD
 
-class ViewController: UIViewController {
+class ViewController: UIViewController ,CLLocationManagerDelegate{
 
+    //CLLocationManagerの入れ物を用意
+    var myLocationManager:CLLocationManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("DEBUG_PRINT : viewcontroller")
         
+        //CLLocationManagerをインスタンス化
+        myLocationManager = CLLocationManager()
+    
+        //位置情報使用許可のリクエストを表示するメソッドの呼び出し
+        myLocationManager.requestWhenInUseAuthorization()
+
         
     }
     
@@ -24,7 +35,6 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("DEBUG_PRINT : viewDidAppear")
         // currentUserがnilならログインしていない
         if Auth.auth().currentUser == nil {
             // ログインしていないときの処理
@@ -32,9 +42,18 @@ class ViewController: UIViewController {
             let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
             self.present(loginViewController!, animated: true, completion: nil)
         }else{
+            //2秒ログイン成功HUDを設定
+            SVProgressHUD.showSuccess(withStatus: "ログイン")
+            SVProgressHUD.dismiss(withDelay: 2)
+            
             let tabBarViewController = self.storyboard?.instantiateViewController(withIdentifier: "TabBar")
             self.present(tabBarViewController!, animated: true, completion: nil)
         }
+    }
+    
+    //位置情報取得に失敗したときに呼び出されるメソッド
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("DEBUG_PURINT : error")
     }
     
 

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>967433316889-rl2e1fd5umqj5hmcm9o93mn5r0l7mp75.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.967433316889-rl2e1fd5umqj5hmcm9o93mn5r0l7mp75</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDX-aOMIANL-Qcvv6bjUtU1u4EQmwjHp-Y</string>
+	<key>GCM_SENDER_ID</key>
+	<string>967433316889</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>jp.techacademy.mizuki.nakajima.Posting</string>
+	<key>PROJECT_ID</key>
+	<string>postingapp-8bd96</string>
+	<key>STORAGE_BUCKET</key>
+	<string>postingapp-8bd96.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:967433316889:ios:70786a6fbe7c53f1</string>
+	<key>DATABASE_URL</key>
+	<string>https://postingapp-8bd96.firebaseio.com</string>
+</dict>
+</plist>

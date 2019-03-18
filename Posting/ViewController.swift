@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("DEBUG_PRINT : viewcontroller")
+        
+        
     }
     
 
@@ -26,9 +28,12 @@ class ViewController: UIViewController {
         // currentUserがnilならログインしていない
         if Auth.auth().currentUser == nil {
             // ログインしていないときの処理
-            print("DEBUG_PRINT : ログインしていない処理へ")
+            print("DEBUG_PRINT : ログインしていない場合の処理へ")
             let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
             self.present(loginViewController!, animated: true, completion: nil)
+        }else{
+            let tabBarViewController = self.storyboard?.instantiateViewController(withIdentifier: "TabBar")
+            self.present(tabBarViewController!, animated: true, completion: nil)
         }
     }
     

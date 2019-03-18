@@ -136,7 +136,7 @@
             </objects>
             <point key="canvasLocation" x="2423" y="752"/>
         </scene>
-        <!--Home View Controller-->
+        <!--ホーム-->
         <scene sceneID="GG0-Cj-JzS">
             <objects>
                 <viewController storyboardIdentifier="Home" id="MTN-1v-3aK" customClass="HomeViewController" customModule="Posting" customModuleProvider="target" sceneMemberID="viewController">
@@ -146,15 +146,21 @@
                         <color key="backgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="bLx-G2-ata"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="ホーム" image="home" id="A7d-EL-b5g" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="9dw-Jp-ZmG" id="RT8-RS-WdL"/>
+                        </connections>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJ1-ov-YwK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="9dw-Jp-ZmG" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController"/>
             </objects>
-            <point key="canvasLocation" x="2044" y="-72"/>
+            <point key="canvasLocation" x="2044" y="44"/>
         </scene>
-        <!--Home View Controller-->
+        <!--設定-->
         <scene sceneID="Fjb-wy-1QR">
             <objects>
-                <viewController storyboardIdentifier="Setting" id="wyM-9k-F3e" customClass="HomeViewController" customModule="Posting" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Setting" id="wyM-9k-F3e" customClass="SettingViewController" customModule="Posting" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UOw-yD-WP1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,10 +200,78 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mCK-ET-5c7"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="設定" image="setting" id="lKs-g9-C1K" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="Y1i-Fp-24q" id="jby-ZP-FCQ"/>
+                        </connections>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RS1-09-uZE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="Y1i-Fp-24q" customClass="RAMFlipTopTransitionItemAnimations" customModule="RAMAnimatedTabBarController"/>
             </objects>
-            <point key="canvasLocation" x="2751" y="-72"/>
+            <point key="canvasLocation" x="2750" y="44"/>
+        </scene>
+        <!--共有メモ-->
+        <scene sceneID="kaE-ho-Tia">
+            <objects>
+                <viewController storyboardIdentifier="Information" id="CBq-JC-hTN" customClass="InformationViewController" customModule="Posting" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Iz5-0G-nj5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="yBL-X1-x9K"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="共有メモ" image="team" selectedImage="team" id="Ye3-Xz-7QN" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="animation" destination="k9q-UO-8e4" id="k28-WF-oH7"/>
+                        </connections>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rs9-cM-IoN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="k9q-UO-8e4" customClass="RAMFlipLeftTransitionItemAnimations" customModule="RAMAnimatedTabBarController">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
+                            <color key="value" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="iconSelectedColor">
+                            <color key="value" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1350" y="44"/>
+        </scene>
+        <!--Animated Tab Bar Controller-->
+        <scene sceneID="ZNs-Ng-QB0">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBar" id="tK0-kD-ns7" customClass="RAMAnimatedTabBarController" customModule="RAMAnimatedTabBarController" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uRv-mD-8gN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="CBq-JC-hTN" kind="relationship" relationship="viewControllers" id="c3X-af-0Je"/>
+                        <segue destination="MTN-1v-3aK" kind="relationship" relationship="viewControllers" id="ZO8-kv-yzZ"/>
+                        <segue destination="wyM-9k-F3e" kind="relationship" relationship="viewControllers" id="Kex-Yz-UUy"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xs8-US-ar1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2750" y="-752"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="home" width="40" height="40"/>
+        <image name="setting" width="40" height="40"/>
+        <image name="team" width="40" height="40"/>
+    </resources>
 </document>

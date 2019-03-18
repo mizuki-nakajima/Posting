@@ -19,6 +19,8 @@
 		D3233510223F8060008488BE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D323350F223F8060008488BE /* MapViewController.swift */; };
 		D3233512223F809B008488BE /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3233511223F809B008488BE /* PostViewController.swift */; };
 		D3233518223FD10B008488BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3233517223FD10B008488BE /* GoogleService-Info.plist */; };
+		D323351A223FD440008488BE /* NewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3233519223FD440008488BE /* NewAnimation.swift */; };
+		D323351C223FDB78008488BE /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D323351B223FDB78008488BE /* InformationViewController.swift */; };
 		DF4DE71C42E68CA415B6283E /* Pods_Posting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E0DCA6D2665F5433B93509D /* Pods_Posting.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +42,8 @@
 		D323350F223F8060008488BE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D3233511223F809B008488BE /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		D3233517223FD10B008488BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D3233519223FD440008488BE /* NewAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAnimation.swift; sourceTree = "<group>"; };
+		D323351B223FDB78008488BE /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +86,10 @@
 				D32334F8223F7994008488BE /* Main.storyboard */,
 				D3233506223F7D8E008488BE /* LoginViewController.swift */,
 				D323350F223F8060008488BE /* MapViewController.swift */,
+				D323351B223FDB78008488BE /* InformationViewController.swift */,
 				D3233508223F7DA0008488BE /* HomeViewController.swift */,
 				D323350A223F7DB2008488BE /* SettingViewController.swift */,
+				D3233519223FD440008488BE /* NewAnimation.swift */,
 				D32334FB223F7996008488BE /* Assets.xcassets */,
 				D32334FD223F7996008488BE /* LaunchScreen.storyboard */,
 				D3233500223F7996008488BE /* Info.plist */,
@@ -248,6 +254,8 @@
 				D32334F7223F7994008488BE /* ViewController.swift in Sources */,
 				D32334F5223F7994008488BE /* AppDelegate.swift in Sources */,
 				D3233509223F7DA0008488BE /* HomeViewController.swift in Sources */,
+				D323351A223FD440008488BE /* NewAnimation.swift in Sources */,
+				D323351C223FDB78008488BE /* InformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

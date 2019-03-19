@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 import MapKit
 import CoreLocation
 
 class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate{
 
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet var mapView: MKMapView!
     //CLLocationManagerを定義
     var myLocationManager:CLLocationManager!
     //タップされた回数
@@ -20,7 +22,51 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     //ロングタップしたときに立てるピンを定義
     var pinByLongPress:MKPointAnnotation!
     
-    //var pinTintColor:UIColor!
+    var annotationView: MKMarkerAnnotationView!
+    var homeViewController: HomeViewController!
+    //ユーザーが選択した色を受け取る用の変数
+    var pinColor : UIColor?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //選択した色を受け取れているかチェック　あとで消す
+        if pinColor != nil {
+            print("DEBUG_PRINT : pincolor = \(pinColor!)")
+        }
+        else {
+            print("DEBUG_PRINT : pinColor = nilを受け取りました")
+        }
+        
+        //デリゲート
+        mapView.delegate = self
+        
+        //現在地周辺を表示する
+        self.mapView.showsUserLocation = true
+        self.mapView.userTrackingMode = .followWithHeading
+    }
+    
+    //必要なメソッド
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        // これでわける
+        if annotation is MKUserLocation {
+            return nil
+        }
+    
+        let pinID = "PIN"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: pinID) as? MKMarkerAnnotationView
+        if annotationView == nil {
+            annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: pinID)
+            //ピンの色を受け取った色に設定
+            annotationView?.markerTintColor = pinColor
+        } else {
+            annotationView!.annotation = annotation
+        }
+        return annotationView
+    }
+
+    
     
     //ロングタップされたときに呼ばれるメソッド
     @IBAction func longPressMap(_ sender: UILongPressGestureRecognizer) {
@@ -35,32 +81,20 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         //インスタンス化
         pinByLongPress = MKPointAnnotation()
         
-        //ピンの色を設定
-        //mapView?.pinTintColor = UIColor.purpleColor()
-       
-        
         //ロングタップから位置情報を取得
         let location:CGPoint = sender.location(in: mapView)
         
         //取得した位置情報をCLLocationCoordinate2D（座標）に変換
         let longPressedCoordinate:CLLocationCoordinate2D = mapView.convert(location, toCoordinateFrom: mapView)
-        
-        
+    
         
         //ロングタップした位置の座標をピンに入力
         pinByLongPress.coordinate = longPressedCoordinate
         print("DEBUG_PRINT : \(longPressedCoordinate)")
-        //ピンを追加する（立てる）
+        //ピンを刺す
         mapView.addAnnotation(pinByLongPress)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        //現在地周辺を表示する
-        self.mapView.showsUserLocation = true
-        self.mapView.userTrackingMode = .followWithHeading
-    }
     
 
     
@@ -70,19 +104,6 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         let tabBarViewController = self.storyboard?.instantiateViewController(withIdentifier: "TabBar")
         self.present(tabBarViewController!, animated: true, completion: nil)
     }
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
 
     
 }

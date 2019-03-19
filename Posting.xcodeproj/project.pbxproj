@@ -21,6 +21,7 @@
 		D3233518223FD10B008488BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3233517223FD10B008488BE /* GoogleService-Info.plist */; };
 		D323351C223FDB78008488BE /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D323351B223FDB78008488BE /* InformationViewController.swift */; };
 		D323351E223FE79E008488BE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D323351D223FE79D008488BE /* CoreLocation.framework */; };
+		D37A791F2240CBED00D0CB60 /* MyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37A791E2240CBED00D0CB60 /* MyColor.swift */; };
 		DF4DE71C42E68CA415B6283E /* Pods_Posting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E0DCA6D2665F5433B93509D /* Pods_Posting.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		D3233517223FD10B008488BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D323351B223FDB78008488BE /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		D323351D223FE79D008488BE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D37A791E2240CBED00D0CB60 /* MyColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				D32334F8223F7994008488BE /* Main.storyboard */,
 				D3233506223F7D8E008488BE /* LoginViewController.swift */,
 				D323350F223F8060008488BE /* MapViewController.swift */,
+				D37A791E2240CBED00D0CB60 /* MyColor.swift */,
 				D323351B223FDB78008488BE /* InformationViewController.swift */,
 				D3233508223F7DA0008488BE /* HomeViewController.swift */,
 				D323350A223F7DB2008488BE /* SettingViewController.swift */,
@@ -250,6 +253,7 @@
 			files = (
 				D323350B223F7DB2008488BE /* SettingViewController.swift in Sources */,
 				D3233510223F8060008488BE /* MapViewController.swift in Sources */,
+				D37A791F2240CBED00D0CB60 /* MyColor.swift in Sources */,
 				D3233512223F809B008488BE /* PostViewController.swift in Sources */,
 				D3233507223F7D8E008488BE /* LoginViewController.swift in Sources */,
 				D32334F7223F7994008488BE /* ViewController.swift in Sources */,

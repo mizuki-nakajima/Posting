@@ -348,13 +348,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7qj-Hf-Znv">
-                                <rect key="frame" x="67" y="249" width="240" height="128"/>
+                                <rect key="frame" x="16" y="249" width="343" height="398"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cfb-gW-Xl0">
-                                <rect key="frame" x="-16" y="72" width="375" height="169"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVY-7n-Xt9">
                                 <rect key="frame" x="16" y="34" width="45" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -364,10 +360,17 @@
                                     <action selector="handleCancelButton:" destination="VUK-Y2-xQg" eventType="touchUpInside" id="heY-Cc-4Jz"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cfb-gW-Xl0">
+                                <rect key="frame" x="0.0" y="72" width="375" height="169"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="v43-w6-UXd"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="7qj-Hf-Znv" id="a61-gr-Cm1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Id-PI-YM8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ga4-vn-eQx" userLabel="Exit" sceneMemberID="exit"/>

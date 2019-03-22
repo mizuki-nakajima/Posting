@@ -19,6 +19,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var displayNameTextField: UITextField!
     
+    // DatabaseのobserveEventの登録状態を表す
+    var userDataObserving = false
+    
     // ログインボタンをタップしたときに呼ばれるメソッド
     @IBAction func handleLoginButton(_ sender: Any) {
         if let address = mailAddressTextField.text, let password = passwordTextField.text {
@@ -70,6 +73,11 @@ class LoginViewController: UIViewController {
                     return
                 }
                 print("DEBUG_PRINT: ユーザー作成に成功しました。")
+        
+                if let uid = Auth.auth().currentUser?.uid {
+                Database.database().reference().child(Const.PostPath).setValue(uid)
+                }
+                
                 
                 // 表示名を設定する
                 let user = Auth.auth().currentUser
@@ -83,6 +91,7 @@ class LoginViewController: UIViewController {
                             return
                         }
                         print("DEBUG_PRINT: [displayName = \(user.displayName!)]の設定に成功しました。")
+
                         
                         // HUDを消す
                         SVProgressHUD.dismiss()

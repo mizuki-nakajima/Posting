@@ -17,11 +17,12 @@
 		D323350B223F7DB2008488BE /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D323350A223F7DB2008488BE /* SettingViewController.swift */; };
 		D323350E223F7FA7008488BE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D323350D223F7FA7008488BE /* MapKit.framework */; };
 		D3233510223F8060008488BE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D323350F223F8060008488BE /* MapViewController.swift */; };
-		D3233512223F809B008488BE /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3233511223F809B008488BE /* PostViewController.swift */; };
 		D3233518223FD10B008488BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3233517223FD10B008488BE /* GoogleService-Info.plist */; };
 		D323351C223FDB78008488BE /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D323351B223FDB78008488BE /* InformationViewController.swift */; };
 		D323351E223FE79E008488BE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D323351D223FE79D008488BE /* CoreLocation.framework */; };
-		D37A791F2240CBED00D0CB60 /* MyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37A791E2240CBED00D0CB60 /* MyColor.swift */; };
+		D37A792122410AF000D0CB60 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37A792022410AF000D0CB60 /* Const.swift */; };
+		D37A792B2241354D00D0CB60 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37A792A2241354D00D0CB60 /* PostData.swift */; };
+		D37A792D2242FBF200D0CB60 /* PinColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37A792C2242FBF100D0CB60 /* PinColorViewController.swift */; };
 		DF4DE71C42E68CA415B6283E /* Pods_Posting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E0DCA6D2665F5433B93509D /* Pods_Posting.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,11 +42,12 @@
 		D323350A223F7DB2008488BE /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		D323350D223F7FA7008488BE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D323350F223F8060008488BE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		D3233511223F809B008488BE /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		D3233517223FD10B008488BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D323351B223FDB78008488BE /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		D323351D223FE79D008488BE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		D37A791E2240CBED00D0CB60 /* MyColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColor.swift; sourceTree = "<group>"; };
+		D37A792022410AF000D0CB60 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		D37A792A2241354D00D0CB60 /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
+		D37A792C2242FBF100D0CB60 /* PinColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinColorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,13 +87,14 @@
 			children = (
 				D32334F4223F7994008488BE /* AppDelegate.swift */,
 				D32334F6223F7994008488BE /* ViewController.swift */,
-				D3233511223F809B008488BE /* PostViewController.swift */,
 				D32334F8223F7994008488BE /* Main.storyboard */,
 				D3233506223F7D8E008488BE /* LoginViewController.swift */,
 				D323350F223F8060008488BE /* MapViewController.swift */,
-				D37A791E2240CBED00D0CB60 /* MyColor.swift */,
+				D37A792022410AF000D0CB60 /* Const.swift */,
 				D323351B223FDB78008488BE /* InformationViewController.swift */,
 				D3233508223F7DA0008488BE /* HomeViewController.swift */,
+				D37A792A2241354D00D0CB60 /* PostData.swift */,
+				D37A792C2242FBF100D0CB60 /* PinColorViewController.swift */,
 				D323350A223F7DB2008488BE /* SettingViewController.swift */,
 				D32334FB223F7996008488BE /* Assets.xcassets */,
 				D32334FD223F7996008488BE /* LaunchScreen.storyboard */,
@@ -251,15 +254,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D37A792D2242FBF200D0CB60 /* PinColorViewController.swift in Sources */,
 				D323350B223F7DB2008488BE /* SettingViewController.swift in Sources */,
 				D3233510223F8060008488BE /* MapViewController.swift in Sources */,
-				D37A791F2240CBED00D0CB60 /* MyColor.swift in Sources */,
-				D3233512223F809B008488BE /* PostViewController.swift in Sources */,
 				D3233507223F7D8E008488BE /* LoginViewController.swift in Sources */,
 				D32334F7223F7994008488BE /* ViewController.swift in Sources */,
 				D32334F5223F7994008488BE /* AppDelegate.swift in Sources */,
 				D3233509223F7DA0008488BE /* HomeViewController.swift in Sources */,
 				D323351C223FDB78008488BE /* InformationViewController.swift in Sources */,
+				D37A792B2241354D00D0CB60 /* PostData.swift in Sources */,
+				D37A792122410AF000D0CB60 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

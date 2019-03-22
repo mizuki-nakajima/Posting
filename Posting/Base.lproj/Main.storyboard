@@ -106,6 +106,48 @@
             </objects>
             <point key="canvasLocation" x="2044" y="-752"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="gZQ-J5-65f">
+            <objects>
+                <viewController id="raw-Y2-Ta9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fMA-c4-xGO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="15b-Et-vFS">
+                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="ZZd-TI-jrY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f2e-LU-L0Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="698" y="788"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bJ4-vb-wl1">
+            <objects>
+                <viewController id="Xye-I8-pwr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IMR-zR-dOm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dyU-8C-7VY">
+                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="h61-vp-sd6"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NAr-gV-Sl1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1374" y="788"/>
+        </scene>
         <!--Map View Controller-->
         <scene sceneID="1AZ-d1-am5">
             <objects>
@@ -115,7 +157,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tww-pX-k2n">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="567"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="ug0-3Z-GBm" appends="YES" id="moh-yM-aJZ"/>
@@ -131,16 +173,28 @@
                                     <action selector="handleCanceiButton:" destination="Uj6-Tj-Nhq" eventType="touchUpInside" id="Cxj-Wn-ClD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLj-Sb-xRx">
+                                <rect key="frame" x="0.0" y="580" width="375" height="87"/>
+                                <state key="normal" title="ポスティングを終了する">
+                                    <color key="titleShadowColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleEndPostingButton:" destination="Uj6-Tj-Nhq" eventType="touchUpInside" id="T34-9S-h3b"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="7eN-nD-Mmq" firstAttribute="bottom" secondItem="tww-pX-k2n" secondAttribute="bottom" id="1fX-ao-pNf"/>
                             <constraint firstItem="7eN-nD-Mmq" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KlZ-jD-l00" secondAttribute="trailing" symbolic="YES" id="EWM-1r-wsn"/>
+                            <constraint firstItem="WLj-Sb-xRx" firstAttribute="leading" secondItem="7eN-nD-Mmq" secondAttribute="leading" id="PvG-X8-P9s"/>
+                            <constraint firstItem="WLj-Sb-xRx" firstAttribute="top" secondItem="tww-pX-k2n" secondAttribute="bottom" constant="50" id="Qzd-gn-laG"/>
                             <constraint firstItem="tww-pX-k2n" firstAttribute="leading" secondItem="7eN-nD-Mmq" secondAttribute="leading" id="T6c-Vw-bNN"/>
                             <constraint firstItem="tww-pX-k2n" firstAttribute="top" secondItem="7eN-nD-Mmq" secondAttribute="top" id="Wu8-YM-EE8"/>
                             <constraint firstItem="KlZ-jD-l00" firstAttribute="top" secondItem="7eN-nD-Mmq" secondAttribute="top" constant="15" id="b7H-3n-3GG"/>
                             <constraint firstItem="tww-pX-k2n" firstAttribute="top" secondItem="7eN-nD-Mmq" secondAttribute="top" id="cMD-eA-Plt"/>
+                            <constraint firstItem="7eN-nD-Mmq" firstAttribute="bottom" secondItem="WLj-Sb-xRx" secondAttribute="bottom" id="eE4-RD-z4p"/>
                             <constraint firstItem="KlZ-jD-l00" firstAttribute="leading" secondItem="7eN-nD-Mmq" secondAttribute="leading" constant="25" id="pfq-c6-lgn"/>
+                            <constraint firstItem="7eN-nD-Mmq" firstAttribute="trailing" secondItem="WLj-Sb-xRx" secondAttribute="trailing" id="soB-Yy-VvY"/>
                             <constraint firstItem="tww-pX-k2n" firstAttribute="leading" secondItem="7eN-nD-Mmq" secondAttribute="leading" id="vjk-TY-HXE"/>
                             <constraint firstItem="7eN-nD-Mmq" firstAttribute="trailing" secondItem="tww-pX-k2n" secondAttribute="trailing" id="xcH-Ku-ubK"/>
                         </constraints>
@@ -157,39 +211,9 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1681" y="752"/>
+            <point key="canvasLocation" x="2068" y="787.55622188905556"/>
         </scene>
-        <!--Post View Controller-->
-        <scene sceneID="mcQ-dh-C02">
-            <objects>
-                <viewController storyboardIdentifier="Post" id="eOG-Oq-xVh" customClass="PostViewController" customModule="Posting" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="67f-jO-ocx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Kr6-Ry-gZA"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="H25-3v-GR0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2423" y="752"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="K6Q-HV-nAE">
-            <objects>
-                <viewController id="iHr-Ep-jo8" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Anj-gr-fyz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="r2R-nV-QKN"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IsD-9T-5BT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3231" y="751"/>
-        </scene>
-        <!--ホーム-->
+        <!--ポスティング-->
         <scene sceneID="GG0-Cj-JzS">
             <objects>
                 <viewController storyboardIdentifier="Home" id="MTN-1v-3aK" customClass="HomeViewController" customModule="Posting" customModuleProvider="target" sceneMemberID="viewController">
@@ -197,14 +221,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2i-lv-5wg">
-                                <rect key="frame" x="88" y="525" width="200" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="4nc-vQ-CSy"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="rNy-WN-vWm"/>
-                                </constraints>
-                                <state key="normal" title="これまでの記録を見る"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="チラシの種類，ピンの色" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyq-5r-cmh">
                                 <rect key="frame" x="86" y="58" width="191" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -241,19 +257,17 @@
                             <constraint firstItem="g24-0m-Vd0" firstAttribute="centerX" secondItem="aV3-DE-AXJ" secondAttribute="centerX" id="5oO-Ap-nZi"/>
                             <constraint firstItem="g24-0m-Vd0" firstAttribute="leading" secondItem="bLx-G2-ata" secondAttribute="leading" constant="87" id="C46-ec-fXY"/>
                             <constraint firstItem="Yyq-5r-cmh" firstAttribute="centerX" secondItem="UcS-FA-TVY" secondAttribute="centerX" id="CRR-fs-gtO"/>
-                            <constraint firstItem="s2i-lv-5wg" firstAttribute="top" secondItem="g24-0m-Vd0" secondAttribute="bottom" constant="8" symbolic="YES" id="Cot-gr-hwf"/>
                             <constraint firstItem="aV3-DE-AXJ" firstAttribute="top" secondItem="d95-fd-w0X" secondAttribute="top" constant="218" id="KsO-lR-KSL"/>
-                            <constraint firstItem="s2i-lv-5wg" firstAttribute="centerY" secondItem="d95-fd-w0X" secondAttribute="centerY" id="OTp-gO-F1Z"/>
                             <constraint firstItem="g24-0m-Vd0" firstAttribute="leading" secondItem="Yyq-5r-cmh" secondAttribute="leading" id="Q3c-Ti-6qk"/>
                             <constraint firstItem="UcS-FA-TVY" firstAttribute="top" secondItem="Yyq-5r-cmh" secondAttribute="bottom" constant="8" symbolic="YES" id="S7B-9w-HE7"/>
-                            <constraint firstItem="s2i-lv-5wg" firstAttribute="centerX" secondItem="d95-fd-w0X" secondAttribute="centerX" id="XWE-KL-gbk"/>
                             <constraint firstItem="Yyq-5r-cmh" firstAttribute="trailing" secondItem="UcS-FA-TVY" secondAttribute="trailing" id="shz-CK-N6T"/>
                             <constraint firstItem="Yyq-5r-cmh" firstAttribute="top" secondItem="bLx-G2-ata" secondAttribute="top" constant="83" id="vZ0-lC-UOm"/>
+                            <constraint firstItem="bLx-G2-ata" firstAttribute="bottom" secondItem="g24-0m-Vd0" secondAttribute="bottom" constant="101" id="x2m-q8-rEY"/>
                             <constraint firstItem="aV3-DE-AXJ" firstAttribute="leading" secondItem="d95-fd-w0X" secondAttribute="leading" id="yDG-ay-Tfp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bLx-G2-ata"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="ホーム" image="home" id="A7d-EL-b5g" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                    <tabBarItem key="tabBarItem" title="ポスティング" image="home" id="A7d-EL-b5g" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
                         <connections>
                             <outlet property="animation" destination="9dw-Jp-ZmG" id="RT8-RS-WdL"/>
                         </connections>
@@ -266,7 +280,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJ1-ov-YwK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="9dw-Jp-ZmG" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController"/>
             </objects>
-            <point key="canvasLocation" x="2044" y="43.628185907046479"/>
+            <point key="canvasLocation" x="2068" y="79"/>
         </scene>
         <!--設定-->
         <scene sceneID="Fjb-wy-1QR">
@@ -289,6 +303,9 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="Lx2-CW-PVX"/>
                                 </constraints>
                                 <state key="normal" title="ログアウト"/>
+                                <connections>
+                                    <action selector="handleLogoutButton:" destination="wyM-9k-F3e" eventType="touchUpInside" id="bTb-rM-1s7"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="新しい表示名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eQ3-wq-1Nx">
                                 <rect key="frame" x="62.5" y="140" width="250" height="30"/>
@@ -300,7 +317,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DWj-rI-MEd" firstAttribute="top" secondItem="3TP-WN-XwN" secondAttribute="bottom" constant="10" id="2ZJ-wO-24f"/>
                             <constraint firstItem="DWj-rI-MEd" firstAttribute="centerX" secondItem="UOw-yD-WP1" secondAttribute="centerX" id="Q9P-nf-S0x"/>
@@ -320,19 +337,97 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RS1-09-uZE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="Y1i-Fp-24q" customClass="RAMFlipTopTransitionItemAnimations" customModule="RAMAnimatedTabBarController"/>
             </objects>
-            <point key="canvasLocation" x="2750" y="44"/>
+            <point key="canvasLocation" x="2774" y="79"/>
         </scene>
-        <!--共有メモ-->
+        <!--Pin Color View Controller-->
+        <scene sceneID="C5I-2O-Z1X">
+            <objects>
+                <viewController storyboardIdentifier="PinColor" id="VUK-Y2-xQg" customClass="PinColorViewController" customModule="Posting" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1iK-3y-6vk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7qj-Hf-Znv">
+                                <rect key="frame" x="67" y="249" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cfb-gW-Xl0">
+                                <rect key="frame" x="-16" y="72" width="375" height="169"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVY-7n-Xt9">
+                                <rect key="frame" x="16" y="34" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="&lt; 戻る"/>
+                                <connections>
+                                    <action selector="handleCancelButton:" destination="ga4-vn-eQx" eventType="touchUpInside" id="4jc-2g-pOK"/>
+                                    <action selector="handleCancelButton:" destination="VUK-Y2-xQg" eventType="touchUpInside" id="heY-Cc-4Jz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="v43-w6-UXd"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Id-PI-YM8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ga4-vn-eQx" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="696.79999999999995" y="78.710644677661179"/>
+        </scene>
+        <!--これまでの記録-->
         <scene sceneID="kaE-ho-Tia">
             <objects>
                 <viewController storyboardIdentifier="Information" id="CBq-JC-hTN" customClass="InformationViewController" customModule="Posting" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Iz5-0G-nj5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ポスティング状況" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ju8-jm-ck3">
+                                <rect key="frame" x="118" y="20" width="139" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgI-ef-ftM">
+                                <rect key="frame" x="164" y="49" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="すべて"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="絞り込む" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQ1-UW-6x7">
+                                <rect key="frame" x="16" y="85" width="70" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLt-Ot-Kco">
+                                <rect key="frame" x="94" y="80" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ピンの色"/>
+                                <connections>
+                                    <action selector="handlePinButton:" destination="CBq-JC-hTN" eventType="touchUpInside" id="sgv-lP-M9S"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zws-bt-fTC">
+                                <rect key="frame" x="187" y="80" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="チラシの種類"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sho-7L-dXF">
+                                <rect key="frame" x="303" y="80" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="期間"/>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lpT-0Z-aiM">
+                                <rect key="frame" x="13" y="137" width="348" height="432"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="yBL-X1-x9K"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="共有メモ" image="team" selectedImage="team" id="Ye3-Xz-7QN" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                    <tabBarItem key="tabBarItem" title="これまでの記録" image="team" selectedImage="team" id="Ye3-Xz-7QN" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                 <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -345,6 +440,9 @@
                             <outlet property="animation" destination="k9q-UO-8e4" id="k28-WF-oH7"/>
                         </connections>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="mapView" destination="lpT-0Z-aiM" id="xeG-LS-5ny"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rs9-cM-IoN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="k9q-UO-8e4" customClass="RAMFlipLeftTransitionItemAnimations" customModule="RAMAnimatedTabBarController">
@@ -358,7 +456,7 @@
                     </userDefinedRuntimeAttributes>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="1350" y="44"/>
+            <point key="canvasLocation" x="1373.5999999999999" y="78.710644677661179"/>
         </scene>
         <!--Animated Tab Bar Controller-->
         <scene sceneID="ZNs-Ng-QB0">

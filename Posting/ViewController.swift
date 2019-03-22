@@ -15,6 +15,9 @@ import CoreLocation
 import SVProgressHUD
 
 class ViewController: UIViewController ,CLLocationManagerDelegate{
+    
+//    var userArray: [UserData] = []
+  //  var userData: UserData!
 
     //CLLocationManagerの入れ物を用意
     var myLocationManager:CLLocationManager!
@@ -48,6 +51,8 @@ class ViewController: UIViewController ,CLLocationManagerDelegate{
             
             let tabBarViewController = self.storyboard?.instantiateViewController(withIdentifier: "TabBar")
             self.present(tabBarViewController!, animated: true, completion: nil)
+            
+            
         }
     }
     

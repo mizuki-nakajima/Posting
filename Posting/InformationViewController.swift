@@ -8,25 +8,47 @@
 
 import UIKit
 import SVProgressHUD
+import Firebase
+import FirebaseAuth
+import MapKit
+import CoreLocation
 
 class InformationViewController: UIViewController {
 
+    @IBOutlet weak var mapView: MKMapView!
+    
+    //ピン検索が押されたときに呼ばれるメソッド
+    @IBAction func handlePinButton(_ sender: Any) {
+        let pinColorViewController = self.storyboard?.instantiateViewController(withIdentifier: "PinColor") as! PinColorViewController
+        
+        self.present(pinColorViewController, animated: true, completion: nil)
+        
+    }
+    
+    
+    
+    
+    
+    
+    //firebaseから タップの数，色，チラシの種類，緯度の配列,　経度の配列，日付　を取得
+    
+    
+    ////ここからメモ/////
+    //Greenのピンだけ表示させるとき
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func handleCancelButton(_ sender: Any) {
     }
-    */
-
+    
 }

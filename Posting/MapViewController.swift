@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 import MapKit
 import CoreLocation
 import SVProgressHUD
@@ -21,19 +22,18 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     var postData: PostData!
     //CLLocationManagerを定義
     var myLocationManager:CLLocationManager!
-    //座標（ピン）保存用の配列
-    //var coordinateData:[CLLocationCoordinate2D?] = []
-    var locations :[[String:String]] = []
     //タップされた回数
     var tapped = 1
+    //座標（ピン）保存用の配列
+    var locations :[[String:String]] = []
     //ロングタップしたときに立てるピンを定義
     var pinByLongPress:MKPointAnnotation!
     
     var annotationView: MKMarkerAnnotationView!
     var homeViewController: HomeViewController!
     
-    //Homeでユーザーが選択した値を受け取る用の変数
     var pinColor : UIColor?
+    //Homeでユーザーが選択した値を受け取る用の変数
     var color : String?
     var flyerNameText : String?
     
@@ -42,9 +42,9 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         super.viewDidLoad()
         // HUDを消す
         SVProgressHUD.dismiss()
-        
         //座標（ピン）保存用の配列を空にする
-        //coordinateData = []
+        locations = []
+        
         print("DEBUG_PRINT : \(color) \(flyerNameText)")
         //選択した色を受け取れているかチェック　あとで消す
         if pinColor != nil {
@@ -86,6 +86,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     
     //ロングタップされたときに呼ばれるメソッド
     @IBAction func longPressMap(_ sender: UILongPressGestureRecognizer) {
+        
         //ロングタップの最初の感知のみ受け取る
         if(sender.state != UIGestureRecognizer.State.began){
             return
@@ -109,22 +110,11 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         print("DEBUG_PRINT : 緯度\(x) 経度 \(y)")
         
         //座標（ピン）を保存する配列に追加する
-      //  locations.append("lat" : "x" ,"lng":"y")
-        print("DEBUG_PRINT: coordinateData \(locations)")
+        locations.append(["lat":x ,"lng":y])
+        print("DEBUG_PRINT: locations \(locations)")
         
         
         /// ここからメモ ///
-       
-        
-        //Step2　緯度,経度をそれぞれ配列に追加する
-        var latitudeArray : [String] = []
-        var longitudeArray : [String] = []
-        latitudeArray.append(x)
-        longitudeArray.append(y)
-        print("DEBUG_PRINT : 緯度 \([latitudeArray]) 経度\([longitudeArray])")
-        
-        //Step３　firebaseにそれぞれ保存
-        
 
         //Step４　InformationViewControllerで　CLLocationCoordinate2D型のDictionaryを用意
         //Step5 InformationViewControllerで　firebaseからxとyの配列をとってきてCLLocationCoordinate2D型のDictionaryに保存
@@ -138,9 +128,9 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     
         
         //ピン表示の確認
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2DMake(36.94815218508667, 140.4935543190183)
-        self.mapView.addAnnotation(annotation)
+    //    let annotation = MKPointAnnotation()
+    //    annotation.coordinate = CLLocationCoordinate2DMake(36.94815218508667, 140.4935543190183)
+    //    self.mapView.addAnnotation(annotation)
         ///ここまで///
         
         
@@ -148,7 +138,6 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         
         //ロングタップした位置の座標をピンに入力
         pinByLongPress.coordinate = longPressedCoordinate
-        print("DEBUG_PRINT : \(longPressedCoordinate)")
         //ピンを刺す
         mapView.addAnnotation(pinByLongPress)
         
@@ -161,28 +150,29 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         
         // postDataに必要な情報を取得しておく
         let time = Date.timeIntervalSinceReferenceDate
+        
+        //本当に終了しますかアラート
+        
         //ユーザーに紐づけて，色とチラシの名前を保存する　データをmapに渡して，座標と一緒に保存
         if let uid = Auth.auth().currentUser?.uid {
             // HUDで処理中を表示
             SVProgressHUD.show()
             
+            let profileId = uid
             let postRef = Database.database().reference().child(Const.PostPath).child(uid)
-            let post = ["flyerName": flyerNameText!,
-                        "pinsColor": color,
-                        "time":String(time)]
+            let post:[String:Any] = ["profileId":profileId,
+                                     "flyerName": flyerNameText!,
+                                     "pinsColor": color,
+                                     "time":String(time),
+                                     "coordinate": locations]
             postRef.childByAutoId().setValue(post)
         }
         
-        //本当に終了しますかアラート
+        print("DEBUG_PRINT: データベース入れた直後　coordinate →　\(self.postData?.coordinate)")
+        print("DEBUG_PRINT: データベース入れた直後　locations →　\(locations)")
         
-        
-        
-        //ユーザーに紐づける
-    //    let postRef = Database.database().reference().child(Const.UserPath).child(Const.PostPath)
-      //  let postDic = ["coordinate": coordinateData]
-    //    postRef.childByAutoId().setValue(postDic)
-        
-        
+        let tabBarViewController = self.storyboard?.instantiateViewController(withIdentifier: "TabBar")
+        self.present(tabBarViewController!, animated: true, completion: nil)
     }
     
     //キャンセルボタンが押されたときのメソッド
@@ -195,6 +185,6 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         
         
     }
-
+    
     
 }

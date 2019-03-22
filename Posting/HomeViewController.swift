@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 import SVProgressHUD
 
 class HomeViewController: UIViewController ,UIPickerViewDelegate,UIPickerViewDataSource {
@@ -22,8 +23,8 @@ class HomeViewController: UIViewController ,UIPickerViewDelegate,UIPickerViewDat
     var postData: PostData!
     
     
-    let dataList = ["Red","Green","Blue","Cyan","Yellow","Magenta","Orange","Purple"]
-    let colorList =  [UIColor.red, UIColor.green, UIColor.blue, UIColor.cyan, UIColor.yellow, UIColor.magenta, UIColor.orange,UIColor.purple]
+    let dataList = ["選択してください","Red","Green","Blue","Cyan","Yellow","Magenta","Orange","Purple"]
+    let colorList =  [UIColor.red, UIColor.red, UIColor.green, UIColor.blue, UIColor.cyan, UIColor.yellow, UIColor.magenta, UIColor.orange,UIColor.purple]
 
     
     override func viewDidLoad() {
@@ -70,11 +71,10 @@ class HomeViewController: UIViewController ,UIPickerViewDelegate,UIPickerViewDat
     @IBAction func handlePostingStartButton(_ sender: Any) {
         
         
-        
         // チラシ名のいずれかでも入力されていない時は何もしない
         if let flyerName = flyerNameTextField.text {
             // チラシの種類，色のいずれかでも入力されていない時は何もしない
-            if flyerName.isEmpty || saveColor.isEmpty {
+            if flyerName.isEmpty || saveColor.isEmpty  {
                 print("DEBUG_PRINT: 何かが空です")
                 return
             }

@@ -12,7 +12,7 @@ import FirebaseAuth
 import FirebaseDatabase
 import SVProgressHUD
 
-class HomeViewController: UIViewController ,UIPickerViewDelegate,UIPickerViewDataSource {
+class HomeViewController: UIViewController ,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate {
 
     @IBOutlet weak var flyerNameTextField: UITextField!
     @IBOutlet weak var colorPickerView: UIPickerView!
@@ -27,6 +27,9 @@ class HomeViewController: UIViewController ,UIPickerViewDelegate,UIPickerViewDat
     let colorList =  [UIColor.red, UIColor.red, UIColor.green, UIColor.blue, UIColor.cyan, UIColor.yellow, UIColor.magenta, UIColor.orange,UIColor.purple]
 
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("PURINT_DEBUG : ログインしました")
@@ -34,9 +37,16 @@ class HomeViewController: UIViewController ,UIPickerViewDelegate,UIPickerViewDat
 
         colorPickerView.delegate = self
         colorPickerView.dataSource = self
+        self.flyerNameTextField.delegate = self
         
         //print("DEBUG_PRINT : 未選択の状態  \(selectedColor!)")
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        flyerNameTextField.resignFirstResponder()
+        return true
+    }
+    
     
     // UIPickerViewの列の数
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

@@ -34,6 +34,10 @@ class InformationViewController: UIViewController ,CLLocationManagerDelegate,MKM
         super.viewDidLoad()
         print("DEBUG_PRINT: mapViewDidLoad")
         
+        //現在地周辺を表示する
+        self.mapView.showsUserLocation = true
+        self.mapView.userTrackingMode = .followWithHeading
+        
         
         if Auth.auth().currentUser != nil {
             print("DEBUG_PRINT: currentUserはnilじゃない")
